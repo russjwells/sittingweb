@@ -1,14 +1,14 @@
 .header {
-  background: #eee url('../../header-bk.png') center;
+  background: #343434;
   background-size: cover;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #616161;
 }
 
 .content {
   width: 100%;
   max-width: 980px;
   margin: auto;
-  padding: 64px 16px;
+  padding: 20px 16px;
   overflow: auto;
 }
 
@@ -20,7 +20,7 @@
 
 .site-title a {
   text-decoration: none;
-  color: #FFF;
+  color: #616161;
 }
 
 .add-post-button {

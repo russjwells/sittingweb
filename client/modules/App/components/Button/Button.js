@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import styles from './Button.css';
+
+import buttonimage from '../../multidimensionalmeditator.png';
 
 class Button extends Component {
   render() {
     return(
-      <div className="Button">
-        Button
+      <div className={styles.Button}>
+        <img src={buttonimage} width='83px' height='83px' />
       </div>
     );
   }

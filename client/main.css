@@ -29,7 +29,11 @@ input:-moz-placeholder {
 
 body {
 	background: #484848;
-	color: #FFF;
+	color: #A5A5A5;
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
+	text-align: center;
+}
+body:nth-child(1) {
+	margin: 40px;
 }

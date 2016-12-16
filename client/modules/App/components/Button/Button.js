@@ -5,6 +5,9 @@ import styles from './Button.css';
 import buttonimage from '../../multidimensionalmeditator.png';
 
 class Button extends Component {
+  handleButtonClick(){
+    
+  }
   render() {
     return(
       <div className={styles.Button}>

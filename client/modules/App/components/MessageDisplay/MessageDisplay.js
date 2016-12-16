@@ -6,7 +6,7 @@ class MessageDisplay extends Component {
   render() {
     return(
       <div className={styles.MessageDisplay}>
-        Welcome to Meditation
+        Begin Meditation
       </div>
     );
   }

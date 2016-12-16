@@ -55,7 +55,7 @@ export class App extends Component {
             toggleAddPost={this.toggleAddPostSection}
           />
           <div className={styles.container}>
-            <MeditationView />
+            <MeditationView appState="Beginning" defaultMinutes={20} defaultSeconds={0}/>
           </div>
           <Footer />
         </div>

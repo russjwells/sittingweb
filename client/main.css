@@ -1,6 +1,23 @@
 /*
   Global CSS file
 */
+@font-face {
+	font-family: 'Avant Garde Medium Oblique BT';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Avant Garde Medium Oblique BT'), url('AVGARDMI_2.woff') format('woff');
+}
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('texgyreadventor-regular-webfont.eot');
+    src: url('texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('texgyreadventor-regular-webfont.woff') format('woff'),
+         url('texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -8,6 +25,12 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	line-height: normal;
+}
+html, body, #root, .appHolder{
+	display: inline-flex;
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
 }
 
 ::-webkit-input-placeholder {
@@ -29,7 +52,7 @@ input:-moz-placeholder {
 body {
 	background: #484848;
 	color: #A5A5A5;
-	font-family: 'Lato', sans-serif;
+	font-family: 'texgyreadventorregular', sans-serif;
 	font-size: 16px;
 	text-align: center;
 	display: flex;
@@ -37,4 +60,8 @@ body {
 }
 body:nth-child(1) {
 	margin: 40px;
+}
+.appHolder{
+	display: flex !important;
+	flex-direction: column;
 }

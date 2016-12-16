@@ -26,10 +26,13 @@
 .leftdrawericon{
   vertical-align: middle;
   margin: 20px;
+  cursor: pointer;
 }
 .rightdrawericon{
   vertical-align: middle;
   margin: 20px;
+  width: 24px;
+  height: 19px;
 }
 .add-post-button {
   display: inline-block;

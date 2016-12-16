@@ -19,7 +19,7 @@ export function Header(props, context) {
       <div className={styles.content}>
           <Link to="/" ><img src={titleimage} alt="Sitting" /></Link>
       </div>
-      <div className={styles.rightdrawericon}><img src={leftdrawericon} /></div>
+      <div className={styles.rightdrawericon}></div>
     </div>
   );
 }

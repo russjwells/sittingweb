@@ -2,31 +2,35 @@
   background: #343434;
   background-size: cover;
   border-bottom: 1px solid #616161;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .content {
-  width: 100%;
-  max-width: 980px;
-  margin: auto;
-  padding: 20px 16px;
-  overflow: auto;
+  margin: 20px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .site-title {
   font-weight: 300;
   font-size: 42px;
+  vertical-align: middle;
 }
 
 .site-title a {
   text-decoration: none;
   color: #616161;
 }
-
+.leftdrawericon{
+  vertical-align: middle;
+  margin: 20px;
+}
+.rightdrawericon{
+  vertical-align: middle;
+  margin: 20px;
+}
 .add-post-button {
   display: inline-block;
   color: #FFF;

@@ -5,6 +5,9 @@ import { FormattedMessage } from 'react-intl';
 // Import Style
 import styles from './Header.css';
 
+import titleimage from '../../sittingtitle.png';
+import leftdrawericon from '../../leftdrawericon.png';
+
 export function Header(props, context) {
   const languageNodes = props.intl.enabledLanguages.map(
     lang => <li key={lang} onClick={() => props.switchLanguage(lang)} className={lang === props.intl.locale ? styles.selected : ''}>{lang}</li>
@@ -12,11 +15,11 @@ export function Header(props, context) {
 
   return (
     <div className={styles.header}>
+      <div className={styles.leftdrawericon}><img src={leftdrawericon} width="24px" height="16px" /></div>
       <div className={styles.content}>
-        <h1 className={styles['site-title']}>
-          <Link to="/" >Sitting</Link>
-        </h1>
+          <Link to="/" ><img src={titleimage} alt="Sitting" /></Link>
       </div>
+      <div className={styles.rightdrawericon}><img src={leftdrawericon} /></div>
     </div>
   );
 }

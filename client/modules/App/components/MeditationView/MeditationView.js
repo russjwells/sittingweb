@@ -8,13 +8,13 @@ import styles from './MeditationView.css';
 class MeditationView extends Component {
   constructor(props) {
     super(props);
-    this.state={
-
-    };
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.state={
+      appState: "Beginning"
+    };
   }
   handleButtonClick(){
-    console.log('clicked');
+    console.log('hahahah');
   }
   reset() {
 
@@ -28,9 +28,17 @@ class MeditationView extends Component {
   render() {
     return (
       <div className={styles.MeditationView}>
-        <MessageDisplay />
-        <Timer defaultMinutes={this.props.defaultMinutes} defaultSeconds={this.props.defaultSeconds}/>
-        <Button />
+        <MessageDisplay
+          appState={this.props.appState}
+        />
+        <Timer
+          minutes={this.props.defaultMinutes}
+          seconds={this.props.defaultSeconds}
+        />
+        <Button
+          appState={this.state.appState}
+          onClick={this.handleButtonClick}
+        />
       </div>
     );
   }

@@ -7,12 +7,22 @@ class MessageDisplay extends Component {
     super(props);
   }
   render() {
+    var message = messageMapper[this.props.appState];
     return(
       <div className={styles.MessageDisplay}>
-        Begin Meditation
+        {message}
       </div>
     );
   }
 }
+
+var messageMapper = {
+  'Beginning': 'Welcome to Meditation',
+  'Running': 'Meditation in Progress',
+  'Paused' : 'Meditation in Progress', //Paused
+  'Finished' : 'Meditation Complete',
+  'Resetting' : 'Press to Reset'
+};
+
 
 export default MessageDisplay;

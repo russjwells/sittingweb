@@ -11,7 +11,6 @@ class Button extends Component {
   }
 
   handleClick() {
-    console.log('clicko');
     this.props.onClick();
   }
 

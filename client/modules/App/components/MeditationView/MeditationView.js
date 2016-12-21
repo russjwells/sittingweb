@@ -10,12 +10,31 @@ class MeditationView extends Component {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.state={
-      appState: "Beginning"
+      appState: "Beginning",
+      currentMin: this.props.defaultMinutes,
+      currentSec: this.props.defaultSeconds
     };
   }
+  tick() {
+    if (this.state.appState = "Running") {
+
+      if (this.state.currentSec>0){
+        this.setState({
+          currentSec: currentSec - 1
+        });
+      }
+    }
+    console.log("tick")
+  }
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+  componentWillUnMount(){
+    clearInterval(this.interval);
+  }
   handleButtonClick(){
-    console.log('hahahah');
-    this.setState({appState: "Running"});
+    this.setState({appState: stateMapper[this.state.appState]});
+    console.log(this.state.appState);
   }
   reset() {
 
@@ -30,11 +49,11 @@ class MeditationView extends Component {
     return (
       <div className={styles.MeditationView}>
         <MessageDisplay
-          appState={this.props.appState}
+          appState={this.state.appState}
         />
         <Timer
-          minutes={this.props.defaultMinutes}
-          seconds={this.props.defaultSeconds}
+          minutes={this.state.currentMin}
+          seconds={this.state.currentSec}
         />
         <Button
           appState={this.state.appState}
@@ -43,6 +62,14 @@ class MeditationView extends Component {
       </div>
     );
   }
+}
+
+var stateMapper = {
+  'Beginning' : 'Running',
+  'Running' : 'Paused',
+  'Paused' : 'Running',
+  'Finished' : 'Beginning',
+  'Resetting' : 'Beginning',
 }
 
 export default MeditationView;

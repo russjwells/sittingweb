@@ -15,6 +15,7 @@ class MeditationView extends Component {
   }
   handleButtonClick(){
     console.log('hahahah');
+    this.setState({appState: "Running"});
   }
   reset() {
 

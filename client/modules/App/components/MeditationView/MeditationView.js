@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MessageDisplay from '.././MessageDisplay/MessageDisplay';
 import Timer from '.././Timer/Timer';
 import Button from '.././Button/Button';
+import Sound from 'react-sound';
 
 import styles from './MeditationView.css';
 
@@ -78,21 +79,43 @@ class MeditationView extends Component {
 
   }
   render() {
-    return (
-      <div className={styles.MeditationView}>
-        <MessageDisplay
-          appState={this.state.appState}
-        />
-        <Timer
-          minutes={this.state.currentMin}
-          seconds={this.state.currentSec}
-        />
-        <Button
-          appState={this.state.appState}
-          onClick={this.handleButtonClick}
-        />
-      </div>
-    );
+    if (this.state.appState=="Finished"){
+      return (
+        <div className={styles.MeditationView}>
+          <MessageDisplay
+            appState={this.state.appState}
+          />
+          <Timer
+            minutes={this.state.currentMin}
+            seconds={this.state.currentSec}
+            appState={this.state.appState}
+          />
+          <Button
+            appState={this.state.appState}
+            onClick={this.handleButtonClick}
+          />
+          <Sound url="http://www.russdigital.com/sitting/singingbowlring.wav" playStatus={Sound.status.PLAYING}/>
+        </div>
+      );
+    } else{
+      return (
+        <div className={styles.MeditationView}>
+          <MessageDisplay
+            appState={this.state.appState}
+          />
+          <Timer
+            minutes={this.state.currentMin}
+            seconds={this.state.currentSec}
+            appState={this.state.appState}
+          />
+          <Button
+            appState={this.state.appState}
+            onClick={this.handleButtonClick}
+          />
+        </div>
+      );
+    }
+
   }
 }
 

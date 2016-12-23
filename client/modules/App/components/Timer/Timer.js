@@ -6,24 +6,57 @@ import styles from './Timer.css';
 class Timer extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      mouseOver: false
+    };
   }
   pad(n, width, z) {
     z = z || '0';
     n = n + '';
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
   }
+  onMouseEnter() {
+    this.setState({
+      mouseOver: true
+    });
+    console.log("ya");
+  }
+  onMouseLeave() {
+    this.setState({
+      mouseOver: false
+    });
+    console.log("da");
+  }
   render() {
     let renderMin;
     let renderSec;
     renderMin = this.pad(this.props.minutes, 2);
     renderSec = this.pad(this.props.seconds, 2);
-    return(
-      <div className={styles.Timer}>
-      {renderMin}
-      :
-      {renderSec}
-      </div>
-    );
+
+    if (this.props.appState=="Beginning" && this.state.mouseOver==true){
+      return(
+        <div className={styles.TimerAdjustHolder}>
+          <div className={styles.PlusAjust}>+</div>
+          <div className={styles.Timer}>
+          {renderMin}
+          :
+          {renderSec}
+          </div>
+          <div className={styles.MinusAjust}>-</div>
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <div className={styles.Timer}>
+          {renderMin}
+          :
+          {renderSec}
+          </div>
+        </div>
+      );
+    }
+
   }
 }
 

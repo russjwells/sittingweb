@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import MessageDisplay from '.././MessageDisplay/MessageDisplay';
 import Timer from '.././Timer/Timer';
 import Button from '.././Button/Button';
+import Sound from 'react-sound';
 
 import styles from './MeditationView.css';
+
 
 class MeditationView extends Component {
   constructor(props) {
@@ -28,30 +30,50 @@ class MeditationView extends Component {
         this.setState({
           currentSec: 59
         });
+      } else if (this.state.currentMin == 0 && this.state.currentSec == 0) {
+        this.complete();
+
       } else {
         console.log("all tests fail");
-        console.log(this.state.currentMin>0 && this.state.currentSec == 0);
       }
     } else {
-      console.log("Timer is paused");
     }
-    console.log("tick: " + this.state.currentMin + ":" + this.state.currentSec);
   }
   componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
+
   }
   componentWillUnMount(){
     clearInterval(this.interval);
   }
   handleButtonClick(){
-    this.setState({appState: stateMapper[this.state.appState]});
+    switch (this.state.appState) {
+      case "Beginning":
+        this.setState({appState: "Running"});
+        this.interval = setInterval(() => this.tick(), 1000);
+        break;
+      case "Running":
+        this.setState({appState: stateMapper[this.state.appState]});
+        break;
+      case "Paused":
+        this.setState({appState: stateMapper[this.state.appState]});
+        break;
+      case "Finished":
+        this.reset();
+        break;
+    }
     console.log(this.state.appState);
   }
   reset() {
-
+    this.setState({
+      appState: "Beginning",
+      currentMin: this.props.defaultMinutes,
+      currentSec: this.props.defaultSeconds
+    });
   }
   complete() {
-
+    console.log("complete");
+    this.setState({appState: "Finished"});
+    clearInterval(this.interval);
   }
   halfway() {
 

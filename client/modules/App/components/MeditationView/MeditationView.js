@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MessageDisplay from '.././MessageDisplay/MessageDisplay';
 import Timer from '.././Timer/Timer';
 import Button from '.././Button/Button';
-import Sound from 'react-sound';
 
 import styles from './MeditationView.css';
 

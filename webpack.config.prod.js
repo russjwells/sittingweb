@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         test: /\.wav$/,
-        loader: 'file'
+        loader: 'url-loader?limit=10000',
       },
     ],
   },

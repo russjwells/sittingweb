@@ -58,7 +58,7 @@ export class App extends Component {
             <MeditationView
               appState="Beginning"
               defaultMinutes={0}
-              defaultSeconds={3}
+              defaultSeconds={10}
             />
           </div>
           <Footer />

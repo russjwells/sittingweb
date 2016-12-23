@@ -19,7 +19,7 @@ class MessageDisplay extends Component {
 var messageMapper = {
   'Beginning': 'Welcome to Meditation',
   'Running': 'Meditation in Progress',
-  'Paused' : 'Meditation in Progress', //Paused
+  'Paused' : 'Meditation is Paused',
   'Finished' : 'Meditation Complete',
   'Resetting' : 'Press to Reset'
 };

@@ -16,15 +16,26 @@ class MeditationView extends Component {
     };
   }
   tick() {
-    if (this.state.appState = "Running") {
-
+    if (this.state.appState == "Running") {
       if (this.state.currentSec>0){
         this.setState({
-          currentSec: currentSec - 1
+          currentSec: this.state.currentSec - 1
         });
+      } else if (this.state.currentMin>0 && this.state.currentSec == 0) {
+        this.setState({
+          currentMin: this.state.currentMin - 1
+        });
+        this.setState({
+          currentSec: 59
+        });
+      } else {
+        console.log("all tests fail");
+        console.log(this.state.currentMin>0 && this.state.currentSec == 0);
       }
+    } else {
+      console.log("Timer is paused");
     }
-    console.log("tick")
+    console.log("tick: " + this.state.currentMin + ":" + this.state.currentSec);
   }
   componentDidMount() {
     this.interval = setInterval(() => this.tick(), 1000);

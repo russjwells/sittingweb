@@ -1,3 +1,4 @@
 .MessageDisplay{
   text-transform: none;
+  cursor: default;
 }

@@ -1,5 +1,6 @@
 .Timer {
   font-size: 70px;
+  cursor: default;
 }
 .TimerAdjustHolder{
   flex-direction: row;

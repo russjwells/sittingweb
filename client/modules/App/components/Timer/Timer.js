@@ -15,13 +15,13 @@ class Timer extends Component {
     n = n + '';
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
   }
-  onMouseEnter() {
+  onMouseOver() {
     this.setState({
       mouseOver: true
     });
     console.log("ya");
   }
-  onMouseLeave() {
+  onMouseOut() {
     this.setState({
       mouseOver: false
     });
@@ -33,7 +33,7 @@ class Timer extends Component {
     renderMin = this.pad(this.props.minutes, 2);
     renderSec = this.pad(this.props.seconds, 2);
 
-    if (this.props.appState=="Beginning" && this.state.mouseOver==true){
+    if (this.props.appState=="Beginning" && this.state.mouseOver){
       return(
         <div className={styles.TimerAdjustHolder}>
           <div className={styles.PlusAjust}>+</div>

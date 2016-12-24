@@ -33,29 +33,16 @@ class Timer extends Component {
     renderMin = this.pad(this.props.minutes, 2);
     renderSec = this.pad(this.props.seconds, 2);
 
-    if (this.props.appState=="Beginning" && this.state.mouseOver){
-      return(
-        <div className={styles.TimerAdjustHolder}>
-          <div className={styles.PlusAjust}>+</div>
-          <div className={styles.Timer}>
-          {renderMin}
-          :
-          {renderSec}
-          </div>
-          <div className={styles.MinusAjust}>-</div>
+    return(
+      <div>
+        <div className={styles.Timer}>
+        {renderMin}
+        :
+        {renderSec}
         </div>
-      );
-    } else {
-      return(
-        <div>
-          <div className={styles.Timer}>
-          {renderMin}
-          :
-          {renderSec}
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
+
 
   }
 }

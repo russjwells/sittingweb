@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import MessageDisplay from '.././MessageDisplay/MessageDisplay';
 import Timer from '.././Timer/Timer';
 import Button from '.././Button/Button';
-import Sound from 'react-sound';
+import ReactHowler from 'react-howler';
+import Howler from 'howler';
 
 import styles from './MeditationView.css';
 
+var soundz = new Howl({
+  src: ['http://www.russdigital.com/sitting/singingbowlring.wav']
+});
 
 class MeditationView extends Component {
   constructor(props) {
@@ -74,6 +78,7 @@ class MeditationView extends Component {
     console.log("complete");
     this.setState({appState: "Finished"});
     clearInterval(this.interval);
+    soundz.play();
   }
   halfway() {
 
@@ -94,10 +99,9 @@ class MeditationView extends Component {
             appState={this.state.appState}
             onClick={this.handleButtonClick}
           />
-          <Sound url="http://www.russdigital.com/sitting/singingbowlring.wav" playStatus={Sound.status.PLAYING}/>
         </div>
       );
-    } else{
+    } else {
       return (
         <div className={styles.MeditationView}>
           <MessageDisplay
@@ -115,7 +119,6 @@ class MeditationView extends Component {
         </div>
       );
     }
-
   }
 }
 

@@ -1,9 +1,32 @@
 .container {
-  height: 835px;
   width: 100%;
   padding: 15px;
   margin: 0 auto;
   display: inline-flex;
   justify-content: space-around;
   flex: 1;
+}
+html > div {
+  display: flex;
+}
+.appHolder{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.devHolder{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+div#root{
+  height: 100%;
+  display: flex;
+}
+html,
+body{
+  height: 100%;
+}
+body{
+  margin: 0px;
 }

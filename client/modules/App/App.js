@@ -31,9 +31,9 @@ export class App extends Component {
 
   render() {
     return (
-      <div className="appHolder">
+      <div className={styles.devHolder}>
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
-        <div className="appHolder">
+        <div className={styles.appHolder}>
           <Helmet
             title="Sitting "
             titleTemplate="%s – your daily meditation timer."

@@ -11,6 +11,9 @@ import { configureStore } from './store';
 const store = configureStore(window.__INITIAL_STATE__);
 const mountApp = document.getElementById('root');
 
+mountApp.style.display = 'flex';
+mountApp.style.height = '100%';
+
 render(
   <AppContainer>
     <App store={store} />

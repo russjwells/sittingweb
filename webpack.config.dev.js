@@ -34,7 +34,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -42,7 +42,7 @@ module.exports = {
       }, {
         test: /\.css$/,
         include: /node_modules/,
-        loaders: ['style-loader', 'css-loader'],
+        loaders: ['style-loader', 'css-loader', 'postcss-loader'],
       }, {
         test: /\.jsx*$/,
         exclude: [/node_modules/, /.+\.config.js/],

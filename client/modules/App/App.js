@@ -32,7 +32,7 @@ export class App extends Component {
   render() {
     return (
       <div className={styles.devHolder}>
-        {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
+        
         <div className={styles.appHolder}>
           <Helmet
             title="Sitting "
